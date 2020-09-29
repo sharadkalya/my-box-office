@@ -1,0 +1,47 @@
+
+{
+    "extends": ["airbnb", "airbnb/hooks", "prettier", "prettier/react"],
+    "plugins": ["prettier"],
+    "rules": {
+      "comma-dangle": ["error", "never"],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [".js", ".jsx"]
+        }
+      ],
+      "no-multiple-empty-lines": "error",
+      "no-underscore-dangle": 0,
+      "no-trailing-spaces": "error",
+      "import/imports-first": ["error", "absolute-first"],
+      "import/newline-after-import": "error",
+      "import/prefer-default-export": 0,
+      "indent": ["error", 4, { "SwitchCase": 1 }],
+      "react/jsx-props-no-spreading": ["error", {"custom": "ignore"}],
+      "react/prop-types": ["error"],
+      "react/jsx-sort-props": ["error", {
+        "shorthandFirst": true,
+        "shorthandLast": false,
+        "ignoreCase": false,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }],
+      "semi": "error",
+      "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}]
+    },
+    "globals": {
+      "window": true,
+      "document": true,
+      "localStorage": true,
+      "FormData": true,
+      "FileReader": true,
+      "Blob": true,
+      "navigator": true,
+      "Headers": true,
+      "Request": true,
+      "fetch": true,
+      "alert": true
+    },
+    "parser": "babel-eslint"
+  }
+  
