@@ -26,6 +26,7 @@
         "noSortAlphabetically": false,
         "reservedFirst": false
       }],
+      "react/no-array-index-key": 0,
       "semi": "error",
       "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}]
     },

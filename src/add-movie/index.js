@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import * as MaterialUI from '@material-ui/core';
 import Space from '../common/Space';
 import AddForm from './AddForm';
 
-const AddMovie = ({ onAdd }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
+const AddMovie = ({ editMovieData, isOpen, onAdd, setIsOpen }) => {
     return (
         <>
             <Space />
@@ -19,6 +17,7 @@ const AddMovie = ({ onAdd }) => {
             </MaterialUI.Button>
             <AddForm
                 close={() => setIsOpen(false)}
+                editMovieData={editMovieData}
                 onAdd={onAdd}
                 open={isOpen}
             />
@@ -28,7 +27,10 @@ const AddMovie = ({ onAdd }) => {
 };
 
 AddMovie.propTypes = {
-    onAdd: PropTypes.func.isRequired
+    editMovieData: PropTypes.objectOf(Object).isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    onAdd: PropTypes.func.isRequired,
+    setIsOpen: PropTypes.func.isRequired
 };
 
 export default AddMovie;

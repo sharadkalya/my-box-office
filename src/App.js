@@ -8,25 +8,30 @@ import './app.css';
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [editMovieData, setEditMovieData] = useState(null);
     const [movies, setMovies] = useState([]);
 
     const refreshMovies = () => {
         setIsLoading(true);
         firestore.collection('movies').get().then((snapshot) => {
             setIsLoading(false);
-            const moviesArr = [];
-
-            snapshot.docs.forEach(doc => {
+            const moviesArr = snapshot.docs.map(doc => {
                 const items = doc.data();
-
-                moviesArr.push(items);
+                return { ...items, id: doc.id };
             });
-            setMovies([...moviesArr]);
+            setMovies(moviesArr);
         })
             .catch(() => {
                 setIsLoading(false);
             });
+    };
 
+    const onFormOpenCLose = (closeForm) => {
+        if (!closeForm) {
+            setEditMovieData(null);
+        }
+        setIsOpen(closeForm);
     };
 
     useEffect(() => {
@@ -36,11 +41,16 @@ const App = () => {
     return (
         <Container maxWidth='md'>
             <AddMovie
+                editMovieData={editMovieData}
+                isOpen={isOpen}
                 onAdd={refreshMovies}
+                setIsOpen={onFormOpenCLose}
             />
             <ShowMovies
                 isLoading={isLoading}
                 movies={movies}
+                openEditForm={setIsOpen}
+                setEditMovieData={setEditMovieData}
             />
         </Container>
     );

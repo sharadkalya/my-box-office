@@ -1,3 +1,11 @@
+.primary-color {
+    color: #b52b2b;
+}
+
+.primary-color-background {
+    background-color: #b52b2b;
+}
+
 .movies-grid .MuiAvatar-colorDefault {
   background-color: #b52b2b;
 }
@@ -6,7 +14,7 @@
   text-transform: capitalize;
 }
 
-.add-movie-form {
+.movie-modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +27,8 @@
 .add-movie-form-wrap-inner {
   background-color: #ffffff;
   padding: 20px;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 .add-movie-form-wrap-inner form {
