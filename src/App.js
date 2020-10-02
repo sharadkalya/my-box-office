@@ -1,48 +1,49 @@
-import React, { useState } from 'react';
-import { Button, Grid, TextField } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import Container from '@material-ui/core/Container';
 
+import ShowMovies from './show-movies';
+import AddMovie from './add-movie';
 import { firestore } from './firebase';
+import './app.css';
 
-function App() {
-    const [movie, setMovie] = useState('');
+const App = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [movies, setMovies] = useState([]);
 
-    const saveMovie = () => {
+    const refreshMovies = () => {
+        setIsLoading(true);
         firestore.collection('movies').get().then((snapshot) => {
+            setIsLoading(false);
+            const moviesArr = [];
 
             snapshot.docs.forEach(doc => {
-                let items = doc.data();
+                const items = doc.data();
 
-                /* Make data suitable for rendering */
-                items = JSON.stringify(items);
-                console.log('items', items);
-
+                moviesArr.push(items);
             });
-        });
+            setMovies([...moviesArr]);
+        })
+            .catch(() => {
+                setIsLoading(false);
+            });
+
     };
 
-    return (
-        <>
-            <Grid>
-                <TextField
-                    id="outlined-basic"
-                    label="Movie Name"
-                    onChange={(e) => setMovie(e.target.value)}
-                    value={movie}
-                    variant="outlined"
-                />
-            </Grid>
-            <Grid>
-                <Button
-                    color="primary"
-                    onClick={saveMovie}
-                    variant="contained"
-                >
-                    Submit
-                </Button>
-            </Grid>
-        </>
+    useEffect(() => {
+        refreshMovies();
+    }, []);
 
+    return (
+        <Container maxWidth='md'>
+            <AddMovie
+                onAdd={refreshMovies}
+            />
+            <ShowMovies
+                isLoading={isLoading}
+                movies={movies}
+            />
+        </Container>
     );
-}
+};
 
 export default App;

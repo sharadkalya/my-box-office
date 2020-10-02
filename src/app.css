@@ -1,0 +1,44 @@
+.movies-grid .MuiAvatar-colorDefault {
+  background-color: #b52b2b;
+}
+
+.genre {
+  text-transform: capitalize;
+}
+
+.add-movie-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-movie-form-wrap {
+  outline: none;
+}
+
+.add-movie-form-wrap-inner {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.add-movie-form-wrap-inner form {
+  width: 100%;
+}
+
+.add-new-cast {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+.add-new-cast svg {
+  cursor: pointer;
+}
+
+.add-new-cast .add {
+  color: green;
+}
+
+.add-new-cast .remove {
+  color: red;
+}

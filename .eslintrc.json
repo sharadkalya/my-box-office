@@ -17,14 +17,14 @@
       "import/newline-after-import": "error",
       "import/prefer-default-export": 0,
       "indent": ["error", 4, { "SwitchCase": 1 }],
-      "react/jsx-props-no-spreading": ["error", {"custom": "ignore"}],
+      "react/jsx-props-no-spreading": 0,
       "react/prop-types": ["error"],
       "react/jsx-sort-props": ["error", {
-        "shorthandFirst": true,
+        "shorthandFirst": false,
         "shorthandLast": false,
         "ignoreCase": false,
         "noSortAlphabetically": false,
-        "reservedFirst": true
+        "reservedFirst": false
       }],
       "semi": "error",
       "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": false, "minKeys": 2}]

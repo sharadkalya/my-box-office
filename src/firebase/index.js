@@ -1,7 +1,5 @@
 import * as firebase from 'firebase';
 
-console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY);
-
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
     appId: process.env.REACT_APP_APP_ID,
@@ -12,8 +10,8 @@ const firebaseConfig = {
     storageBucket: process.env.REACT_APP_STORAGE_BUCKET
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const firestore = firebase.firestore();
+const firestore = firebase.firestore(firebaseApp);
 
 export { firebase, firestore };
