@@ -6,7 +6,7 @@ import Space from '../common/Space';
 import { getYears } from '../helper';
 import { firestore } from '../firebase';
 import FullScreenLoader from '../common/FullScreenLoader';
-import Heading from '../common/Title';
+import Heading from '../common/Heading';
 import ReleaseYear from './ReleaseYear';
 import Modal from '../common/Modal';
 import Genres from './Genres';
@@ -91,8 +91,9 @@ const AddForm = (props) => {
         ].some(isEmpty => isEmpty);
 
         if (areFieldsEmpty) return;
-
         const movieCast = cast.filter(star => star.length > 0);
+
+        setIsSubmitted(false);
         setIsLoading(true);
 
         const data = {

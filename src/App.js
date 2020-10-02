@@ -50,7 +50,9 @@ const App = () => {
                 isLoading={isLoading}
                 movies={movies}
                 openEditForm={setIsOpen}
+                refreshMovies={refreshMovies}
                 setEditMovieData={setEditMovieData}
+                setIsLoading={setIsLoading}
             />
         </Container>
     );

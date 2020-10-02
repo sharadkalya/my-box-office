@@ -19,7 +19,9 @@ const Modal = (props) => {
             open={open}
         >
             <MaterialUI.Fade in={open}>
-                {children}
+                <MaterialUI.Grid className="movie-modal-content">
+                    {children}
+                </MaterialUI.Grid>
             </MaterialUI.Fade>
         </MaterialUI.Modal >
     );

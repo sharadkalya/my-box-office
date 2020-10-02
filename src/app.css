@@ -31,6 +31,14 @@
   overflow-y: scroll;
 }
 
+.movie-modal-content {
+    background-color: #ffffff;
+    outline: none;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 250px;
+}
+
 .add-movie-form-wrap-inner form {
   width: 100%;
 }
@@ -51,4 +59,8 @@
 
 .add-new-cast .remove {
   color: red;
+}
+
+.movies-grid-card {
+    height: 100%;
 }
