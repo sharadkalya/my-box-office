@@ -10,6 +10,7 @@ const Genres = (props) => {
         <MaterialUI.Grid
             item
             md={6}
+            xs={12}
         >
             <Autocomplete
                 getOptionLabel={(option) => option}

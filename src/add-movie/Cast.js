@@ -10,11 +10,12 @@ const Cast = (props) => {
         <MaterialUI.Grid
             item
             md={6}
+            xs={12}
         >
             <MaterialUI.Grid container>
                 {cast.map((star, starIndex) => (
                     <>
-                        <MaterialUI.Grid item key={starIndex} md={9}>
+                        <MaterialUI.Grid item key={starIndex} md={9} xs={9}>
                             <MaterialUI.TextField
                                 error={isSubmitted && isCastEmpty}
                                 fullWidth
@@ -28,7 +29,7 @@ const Cast = (props) => {
                                 value={star}
                             />
                         </MaterialUI.Grid>
-                        <MaterialUI.Grid className="add-new-cast" item md={3}>
+                        <MaterialUI.Grid className="add-new-cast" item md={3} xs={3}>
                             <AddCircleOutline className="add" onClick={() => setCast([...cast, ''])} />
                             <RemoveCircleOutline className="remove" onClick={() => removeCast(starIndex)} />
                         </MaterialUI.Grid>

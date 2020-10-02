@@ -52,11 +52,12 @@ const MoviesGrid = ({ movies, openEditForm, refreshMovies, setEditMovieData, set
                     item
                     key={movie.id}
                     sm={6}
+                    xs={12}
                 >
                     <MaterialUI.Card
                         className="movies-grid-card"
                         elevation={3}
-                        xs
+                        xs={12}
                     >
                         <MaterialUI.CardHeader
                             action={

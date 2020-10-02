@@ -9,6 +9,7 @@ const ReleaseYear = (props) => {
             <MaterialUI.Grid
                 item
                 md={6}
+                xs={12}
             >
                 <MaterialUI.FormControl fullWidth>
                     <MaterialUI.InputLabel>Release Year</MaterialUI.InputLabel>

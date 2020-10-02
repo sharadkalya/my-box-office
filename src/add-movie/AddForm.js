@@ -126,12 +126,13 @@ const AddForm = (props) => {
 
     return (
         <Modal close={close} open={open}>
-            <MaterialUI.Container className="add-movie-form-wrap" maxWidth="md">
+            <MaterialUI.Container className="add-movie-form-wrap" maxWidth="md" xs={12}>
                 <FullScreenLoader showLoader={isLoading} />
                 <MaterialUI.Grid
                     alignItems="center"
                     className="add-movie-form-wrap-inner"
                     container
+                    xs={12}
                 >
                     <form
                         onSubmit={submit}
@@ -146,10 +147,11 @@ const AddForm = (props) => {
                             onChange={e => setMovieName(e.target.value)}
                             placeholder="Enter movie name"
                             value={name}
+                            xs={12}
                         />
                         <Space size={30} />
 
-                        <MaterialUI.Grid container spacing={3}>
+                        <MaterialUI.Grid container spacing={3} xs={12}>
                             <ReleaseYear
                                 isSubmitted={isSubmitted}
                                 onChange={(e) => updateReleaseYear(e.target.value)}
@@ -157,7 +159,7 @@ const AddForm = (props) => {
                                 years={years}
                             />
 
-                            <MaterialUI.Grid item md={6}>
+                            <MaterialUI.Grid item md={6} xs={12}>
                                 <MaterialUI.TextField
                                     error={isSubmitted && !director}
                                     fullWidth
@@ -166,10 +168,11 @@ const AddForm = (props) => {
                                     onChange={e => setDirector(e.target.value)}
                                     placeholder="Enter Director name"
                                     value={director}
+                                    xs={12}
                                 />
                             </MaterialUI.Grid>
 
-                            <MaterialUI.Grid item md={6}>
+                            <MaterialUI.Grid item md={6} xs={12}>
                                 <MaterialUI.TextField
                                     error={isSubmitted && !writer}
                                     fullWidth
@@ -190,7 +193,7 @@ const AddForm = (props) => {
                                     ]);
                                 }}
                             />
-                            <MaterialUI.Grid item md={6}>
+                            <MaterialUI.Grid item md={6} xs={12}>
                                 <MaterialUI.TextField
                                     error={isSubmitted && !description}
                                     fullWidth
@@ -212,7 +215,7 @@ const AddForm = (props) => {
                         </MaterialUI.Grid>
                         <Space size={30} />
 
-                        <MaterialUI.Grid container justify="space-evenly" >
+                        <MaterialUI.Grid container justify="space-evenly" xs={12}>
                             <MaterialUI.Button
                                 color="primary"
                                 type="submit"
@@ -224,6 +227,7 @@ const AddForm = (props) => {
                                 color="secondary"
                                 onClick={resetForm}
                                 variant="outlined"
+                                xs={12}
                             >
                                 Cancel
                             </MaterialUI.Button>
